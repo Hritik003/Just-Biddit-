@@ -7,8 +7,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin - <% String uname = request.getParameter("profile_uname");
-            out.print(uname);%></title>
+        <title>Profile Page
+            </title>
         <link rel="stylesheet" href="./css/homepage.css">
         <link rel="stylesheet" href="./css/user_review.css">
         <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
