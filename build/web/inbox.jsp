@@ -126,7 +126,19 @@
                                 rs_msg = st_msg.executeQuery("select * from messages where receiver_uname='" + (String) session.getAttribute("user") + "' and (deleted_for IS NULL or deleted_for!='" + (String) session.getAttribute("user") + "') ORDER BY time DESC");
                                 while (rs_msg.next()) {
                                     if (rs_msg.getString("viewed").equals("N")) { %> <tr style="font-weight:bold"> <% } else { %> <tr> <% }%>
-                                <td> <%= rs_msg.getString("sender_uname")%> </td>
+                                <td> <% 
+                                            // Check if the item_id is in the 'won' table
+                                            String item_id = rs_msg.getString("item_id");
+                                            ResultSet rs_won = st_item.executeQuery("select * from won where item_id='" + item_id + "'");
+                                            if (rs_won.next()) {
+                                                // If the item is in the 'won' table, display the sender_uname
+                                                out.print(rs_msg.getString("sender_uname"));
+                                            } else {
+                                                // If the item is not in the 'won' table, display null or any other placeholder
+                                                out.print("Anonymous");
+                                            }
+                                        %>
+                                </td>
                                 <td> <% rs_item = st_item.executeQuery("select name from item where item_id = '" + rs_msg.getString("item_id") + "' limit 1;");
 //                                    while (rs_item.next()) {
                                     if (rs_item.next()) {%>

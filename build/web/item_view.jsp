@@ -67,7 +67,7 @@
 
                 <div class="info_section">
                     <div class="title">
-                        <span> <%=rs.getString("seller_id")%> </span>
+                        <span>  </span>
                     </div>
                     <div class="half_panel" style="float: left;">
                         Item Id : <%=rs.getString("item_id")%> <br>

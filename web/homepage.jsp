@@ -87,7 +87,7 @@
             <!-- Live bids navigation (hasstarted==1) -->
 
             <div class="page_title">
-                <span>Welcome to biddit!</span>
+                <span>Welcome to BITSBids!</span>
             </div>
             <div class="flex-container">
                 <%
